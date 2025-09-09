@@ -1,5 +1,5 @@
-**Recruitment System – FastAPI Backend
-**
+**Recruitment System – FastAPI Backend**
+
 A mini recruitment platform backend built with FastAPI, MongoDB (Atlas), and JWT authentication. It supports two roles—Admin and Candidate—with job postings, applications, and resume uploads.
 
 ** Problem Statement**
@@ -152,10 +152,15 @@ Configure environment
 Create a .env file in the project root with:
 
 MONGO_URI=mongodb+srv://<user>:<pass>@cluster0.xxxxx.mongodb.net/Recruitment?retryWrites=true&w=majority&appName=Cluster0
+
 SECRET_KEY=change_me_to_a_long_random_string
+
 ALGORITHM=HS256
+
 ACCESS_TOKEN_EXPIRE_MINUTES=60
+
 DB_NAME=Recruitment
+
 UPLOAD_FOLDER=uploads
 
 Run the server
