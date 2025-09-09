@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pymongo
+motor
+bcrypt
+python-jose
+python-dotenv
+passlib
+python-multipart
+email-validator
+certifi
