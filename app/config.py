@@ -1,31 +1,18 @@
 import os
 from dotenv import load_dotenv
-
-
 load_dotenv()
 
+def require_env(name: str) -> str:
+    v = os.getenv(name)
+    if not v:
+        raise RuntimeError(f"Missing required environment variable: {name}")
+    return v
 
-MONGO_URI = os.getenv("MONGO_URI", "")
+MONGO_URI = require_env("MONGO_URI")           
+SECRET_KEY = require_env("SECRET_KEY")         
 
-
-SECRET_KEY = os.getenv("SECRET_KEY", "p6Kx9XkLJhI3TyNZzlx5M3lG7PqJo1nOjxR3d5LQ0xk")
-ALGORITHM = os.getenv("ALGORITHM", "HS256")
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 60))
-
-
-import os
-from dotenv import load_dotenv
-
-# Load environment variables from a .env file if it exists
-load_dotenv()
-
-# MongoDB settings
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://hrutikadsuryawanshi2002:rutika@cluster0.canrk6n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_NAME = os.getenv("DB_NAME", "RecruitmentSystem")
-
-# JWT settings
-SECRET_KEY = os.getenv("SECRET_KEY", "p6Kx9XkLJhI3TyNZzlx5M3lG7PqJo1nOjxR3d5LQ0xk")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
-
+DB_NAME = os.getenv("DB_NAME", "RecruitmentSystem")
 UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER", "uploads")
+ALLOW_INVALID_CERTS = os.getenv("ALLOW_INVALID_CERTS", "false").lower() == "true"
