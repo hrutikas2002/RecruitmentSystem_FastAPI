@@ -3,99 +3,99 @@
 A mini recruitment platform backend built with FastAPI, MongoDB (Atlas), and JWT authentication. It supports two roles—Admin and Candidate—with job postings, applications, and resume uploads.
 
 
-** Problem Statement**
+**Problem Statement**
 
 Build a backend for a recruitment system that allows:
 
 **Candidates**
 
-sign up & log in
+- sign up & log in
 
-browse jobs
+- browse jobs
 
-upload resumes
+- upload resumes
 
-apply to jobs
+- apply to jobs
 
-view their own applications
+- view their own applications
 
 **Admins**
 
-log in
+- log in
 
-create/update jobs
+- create/update jobs
 
-list all candidates
+- list all candidates
 
-view candidate resumes
+- view candidate resumes
 
-view all applications
+- view all applications
 
 **Requirements**
 
-Role-based access control for routes
+- Role-based access control for routes
 
-Secure password hashing and JWT-based auth
+- Secure password hashing and JWT-based auth
 
-Persistent data storage (MongoDB)
+- Persistent data storage (MongoDB)
 
-Resume upload & serving
+- Resume upload & serving
 
-Clear, testable API with Swagger docs
+- Clear, testable API with Swagger docs
 
 **Features**
 
 **Authentication**
 
-Candidate signup
+- Candidate signup
 
-Admin seed & login
+- Admin seed & login
 
-OAuth2 Password Flow with JWT
+- OAuth2 Password Flow with JWT
 
-Role embedded in token (role: "admin" | "candidate")
+- Role embedded in token (role: "admin" | "candidate")
 
 **Jobs**
 
-Create / Update (Admin only)
+- Create / Update (Admin only)
 
-List & get by id (Public)
+- List & get by id (Public)
 
-Status: Open | Closed | Filled
+- Status: Open | Closed | Filled
 
 **Applications**
 
-Candidate applies to job
+- Candidate applies to job
 
-Candidate lists their applications
+- Candidate lists their applications
 
-Admin lists all applications
+- Admin lists all applications
 
-Unique constraint to prevent duplicate applications
+- Unique constraint to prevent duplicate applications
 
 **Candidates**
 
-Upload resume (file) — saved locally & served via /static
+- Upload resume (file) — saved locally & served via /static
 
-Admin lists all candidates
+- Admin lists all candidates
 
-Admin fetches resume URL for a candidate
+- Admin fetches resume URL for a candidate
 
 **Architecture & Tech Stack**
 
-FastAPI (web framework)
+- FastAPI (web framework)
 
-Motor (async MongoDB driver)
+- Motor (async MongoDB driver)
 
-MongoDB Atlas (managed cloud database)
+- MongoDB Atlas (managed cloud database)
 
-Passlib (bcrypt) for secure password hashing
+- Passlib (bcrypt) for secure password hashing
 
-python-jose for JWT creation/verification
+- python-jose for JWT creation/verification
 
-python-multipart for file uploads
+- python-multipart for file uploads
 
-Starlette StaticFiles to serve uploaded resumes
+- Starlette StaticFiles to serve uploaded resumes
 
 **Endpoints Overview**
 
@@ -138,18 +138,17 @@ Explore and try them in Swagger UI: http://127.0.0.1:8000/docs
 
 **Setup & Running Locally**
 
-Create a virtual environment
+1. Create a virtual environment
 
-Windows (PowerShell)
-
+Windows 
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 
-Install dependencies
+2. Install dependencies
 
 pip install -r requirements.txt
 
-Configure environment
+3. Configure environment
 Create a .env file in the project root with:
 
 MONGO_URI=mongodb+srv://<user>:<pass>@cluster0.xxxxx.mongodb.net/Recruitment?retryWrites=true&w=majority&appName=Cluster0
@@ -164,7 +163,7 @@ DB_NAME=Recruitment
 
 UPLOAD_FOLDER=uploads
 
-Run the server
+4. Run the server
 
 If main.py is at the repo root:
 
@@ -174,7 +173,6 @@ If main.py is inside the app package:
 
 uvicorn app.main:app --reload
 
+5. Open Swagger
 
-Open Swagger
-
-http://127.0.0.1:8000/docs
+6. http://127.0.0.1:8000/docs
