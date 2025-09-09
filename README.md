@@ -2,6 +2,7 @@
 
 A mini recruitment platform backend built with FastAPI, MongoDB (Atlas), and JWT authentication. It supports two roles—Admin and Candidate—with job postings, applications, and resume uploads.
 
+
 ** Problem Statement**
 
 Build a backend for a recruitment system that allows:
